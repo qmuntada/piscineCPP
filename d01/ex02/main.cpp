@@ -6,7 +6,7 @@
 /*   By: qmuntada <qmuntada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 18:47:23 by qmuntada          #+#    #+#             */
-/*   Updated: 2015/06/16 19:43:38 by qmuntada         ###   ########.fr       */
+/*   Updated: 2015/06/16 19:48:25 by qmuntada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	zombieStack(void)
 	std::cout << "Choisissez le type de zombie :";
 	std::getline(std::cin, str);
 	instance.ZombieEvent::setZombieType(str);
-	std::cout << std::endl << "Choisissez le nom de votre zombie :";
+	std::cout << "Choisissez le nom de votre zombie :";
 	std::getline(std::cin, str);
 	zombie = instance.newZombie(str);
 	zombie->announce();
