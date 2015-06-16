@@ -1,6 +1,7 @@
 
 #include "contact.class.hpp"
 #include <climits>
+#include <stdio.h>
 
 int		main(void)
 {
@@ -9,6 +10,9 @@ int		main(void)
 	int 			idChose;
 
 	std::cout << "Welcome to the PhoneBook !" << std::endl;
+
+	printf("%d\n ", (Contact::getNbContact()));
+	//std::cout << contactList[3].&getNbContact() << " | " << (contactList[5].getNbContact()) << std::endl;
 	while(buff.compare("EXIT") != 0)
 	{
 		std::cout << "Command available are " << (Contact::getNbContact()
@@ -37,14 +41,14 @@ int		main(void)
 				{
 					std::cin.clear();
 					std::cin.ignore(INT_MAX, '\n');
-					std::cout << "Wrong entry, please try again" << std::endl;
+					std::cout << "Error: Wrong entry" << std::endl;
 				}
 			}
 			else
-				std::cout << " No contact add yet" << std::endl;
+				std::cout << " No contact added yet" << std::endl;
 		}
 		else if (buff.compare("EXIT") != 0)
-			std::cout << "Wring entry, please try again" << std::endl;
+			std::cout << "Error: Wrong entry" << std::endl;
 	}
 	std::cout << "The PhoneBook will now close, good bye !" << std::endl;
 	return (0);
