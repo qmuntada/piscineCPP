@@ -15,7 +15,7 @@ public:
 
 	ScavTrap &		operator=(ScavTrap const & scavTrap);
 
-	void	challengeNewcomer(std::string const & target);
+	void	challengeNewcomer(void);
 };
 
 # endif

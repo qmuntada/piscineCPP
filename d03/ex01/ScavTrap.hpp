@@ -19,7 +19,7 @@ public:
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 
-	void	challengeNewcomer(std::string const & target);
+	void	challengeNewcomer(void);
 
 	unsigned int	getHitPoints(void) const;
 	unsigned int	getMaxHitPoints(void) const;

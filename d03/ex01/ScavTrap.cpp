@@ -88,27 +88,13 @@ void	ScavTrap::beRepaired(unsigned int amount)
 		" HP !" << "My hp is now : " << this->_hitPoints << std::endl;
 }
 
-void	ScavTrap::challengeNewcomer(std::string const & target)
+void	ScavTrap::challengeNewcomer()
 {
-	int		i = rand() % 3;
+	int		i = rand() % 10;
 
 	std::cout << this->_name << "<SC4V-TP> Bon j'avoue flemme de trouver"
 		<< " des truc originaux la" << std::endl;
-	if (i == 0)
-	{
-		std::cout << this->_name << "<SC4V-TP> challenge 1 sur " <<
-		target << std::endl;
-	}
-	else if (i == 1)
-	{
-		std::cout << this->_name << "<SC4V-TP> challenge 2 sur " <<
-		target << std::endl;
-	}
-	else if (i == 2)
-	{
-		std::cout << this->_name << "<SC4V-TP> challenge 3 sur " <<
-		target << std::endl;
-	}
+	std::cout << this->_name << "<SC4V-TP> challenge " << i << std::endl;
 	std::cout << this->_name << "<SC4V-TP> ouahou c'etait fun" << std::endl;
 }
 

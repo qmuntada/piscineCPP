@@ -85,9 +85,7 @@ void	scav(void)
 		}
 		else if (buff.compare("CHALLENGE") == 0)
 		{
-			std::cout << "Please enter a target: ";
-			std::cin >> buff;
-			instance.challengeNewcomer(buff);
+			instance.challengeNewcomer();
 		}
 	}
 	return ;
