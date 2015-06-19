@@ -10,11 +10,29 @@ ScavTrap::ScavTrap(std::string name) : _name(name), _hitPoints(100),
 	return ;
 }
 
+ScavTrap::ScavTrap(void) : _name("null"), _hitPoints(100),
+	_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100),
+	_level(1), _meleeAttackDamage(30), _rangedAttackDamage(20),
+	_armorDamageReduction(5)
+{
+	std::cout << this->_name << "<SC4V-TP> pret !" << std::endl;
+	return ;
+}
+
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "Le <SC4V-TP> " << this->_name << " s'en va :("
 		<< std::endl;
 	return ;
+}
+
+ScavTrap &	ScavTrap::operator=(ScavTrap const & fragTrap)
+{
+	this->_hitPoints = fragTrap.getHitPoints();
+	this->_energyPoints = fragTrap.getEnergyPoints();
+	this->_level = fragTrap.getLevel();
+	this->_name = fragTrap.getName();
+	return (*this);
 }
 
 void	ScavTrap::rangedAttack(std::string const & target)
@@ -92,4 +110,41 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 		target << std::endl;
 	}
 	std::cout << this->_name << "<SC4V-TP> ouahou c'etait fun" << std::endl;
+}
+
+unsigned int		ScavTrap::getHitPoints(void) const
+{
+	return (this->_hitPoints);
+}
+unsigned int		ScavTrap::getMaxHitPoints(void) const
+{
+	return (this->_maxHitPoints);
+}
+unsigned int		ScavTrap::getEnergyPoints(void) const
+{
+	return (this->_energyPoints);
+}
+unsigned int		ScavTrap::getMaxEnergyPoints(void) const
+{
+	return (this->_maxEnergyPoints);
+}
+unsigned int		ScavTrap::getLevel(void) const
+{
+	return (this->_level);
+}
+std::string			ScavTrap::getName(void) const
+{
+	return (this->_name);
+}
+unsigned int		ScavTrap::getMaleeAttackDamage(void) const
+{
+	return (this->_meleeAttackDamage);
+}
+unsigned int		ScavTrap::getRangedAttackDamage(void) const
+{
+	return (this->_rangedAttackDamage);
+}
+unsigned int		ScavTrap::getArmorDamageReduction(void) const
+{
+	return (this->_armorDamageReduction);
 }

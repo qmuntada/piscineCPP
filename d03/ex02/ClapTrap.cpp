@@ -10,10 +10,28 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100),
 	return ;
 }
 
+ClapTrap::ClapTrap(void) : _name("null"), _hitPoints(100),
+	_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100),
+	_level(1), _meleeAttackDamage(30), _rangedAttackDamage(20),
+	_armorDamageReduction(5)
+{
+	std::cout << "Construction d'un ClapTrap en cours..." << std::endl;
+	return ;
+}
+
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "Destruction d'un ClapTrap en cours..." << std::endl;
 	return ;
+}
+
+ClapTrap &	ClapTrap::operator=(ClapTrap const & fragTrap)
+{
+	this->_hitPoints = fragTrap.getHitPoints();
+	this->_energyPoints = fragTrap.getEnergyPoints();
+	this->_level = fragTrap.getLevel();
+	this->_name = fragTrap.getName();
+	return (*this);
 }
 
 void	ClapTrap::rangedAttack(std::string const & target)

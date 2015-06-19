@@ -7,11 +7,26 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	return ;
 }
 
+ScavTrap::ScavTrap(void) : ClapTrap("null")
+{
+	std::cout << this->_name << "<SC4V-TP> pret !" << std::endl;
+	return ;
+}
+
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "Le <SC4V-TP> " << this->_name << " s'en va :("
 		<< std::endl;
 	return ;
+}
+
+ScavTrap &	ScavTrap::operator=(ScavTrap const & fragTrap)
+{
+	this->_hitPoints = fragTrap.getHitPoints();
+	this->_energyPoints = fragTrap.getEnergyPoints();
+	this->_level = fragTrap.getLevel();
+	this->_name = fragTrap.getName();
+	return (*this);
 }
 
 void	ScavTrap::challengeNewcomer(std::string const & target)

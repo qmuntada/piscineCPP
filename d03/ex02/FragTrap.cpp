@@ -7,11 +7,26 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	return ;
 }
 
+FragTrap::FragTrap(void) : ClapTrap("null")
+{
+	std::cout << this->_name << "<FR4G-TP> pare a l'action" << std::endl;
+	return ;
+}
+
 FragTrap::~FragTrap(void)
 {
 	std::cout << "Le <FR4G-TP> " << this->_name << " retire du jeu :("
 		<< std::endl;
 	return ;
+}
+
+FragTrap &	FragTrap::operator=(FragTrap const & fragTrap)
+{
+	this->_hitPoints = fragTrap.getHitPoints();
+	this->_energyPoints = fragTrap.getEnergyPoints();
+	this->_level = fragTrap.getLevel();
+	this->_name = fragTrap.getName();
+	return (*this);
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)

@@ -10,11 +10,29 @@ FragTrap::FragTrap(std::string name) : _name(name), _hitPoints(100),
 	return ;
 }
 
+FragTrap::FragTrap(void) : _name("null"), _hitPoints(100),
+	_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100),
+	_level(1), _meleeAttackDamage(30), _rangedAttackDamage(20),
+	_armorDamageReduction(5)
+{
+	std::cout << this->_name << "<FR4G-TP> pare a l'action" << std::endl;
+	return ;
+}
+
 FragTrap::~FragTrap(void)
 {
 	std::cout << "Le <FR4G-TP> " << this->_name << " retire du jeu :("
 		<< std::endl;
 	return ;
+}
+
+FragTrap &	FragTrap::operator=(FragTrap const & fragTrap)
+{
+	this->_hitPoints = fragTrap.getHitPoints();
+	this->_energyPoints = fragTrap.getEnergyPoints();
+	this->_level = fragTrap.getLevel();
+	this->_name = fragTrap.getName();
+	return (*this);
 }
 
 void	FragTrap::rangedAttack(std::string const & target)
@@ -119,4 +137,41 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 		std::cout << this->_name << 
 			"<FR4G-TP> I have regain all my energy points" << std::endl;
 	}
+}
+
+unsigned int		FragTrap::getHitPoints(void) const
+{
+	return (this->_hitPoints);
+}
+unsigned int		FragTrap::getMaxHitPoints(void) const
+{
+	return (this->_maxHitPoints);
+}
+unsigned int		FragTrap::getEnergyPoints(void) const
+{
+	return (this->_energyPoints);
+}
+unsigned int		FragTrap::getMaxEnergyPoints(void) const
+{
+	return (this->_maxEnergyPoints);
+}
+unsigned int		FragTrap::getLevel(void) const
+{
+	return (this->_level);
+}
+std::string			FragTrap::getName(void) const
+{
+	return (this->_name);
+}
+unsigned int		FragTrap::getMaleeAttackDamage(void) const
+{
+	return (this->_meleeAttackDamage);
+}
+unsigned int		FragTrap::getRangedAttackDamage(void) const
+{
+	return (this->_rangedAttackDamage);
+}
+unsigned int		FragTrap::getArmorDamageReduction(void) const
+{
+	return (this->_armorDamageReduction);
 }

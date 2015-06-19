@@ -8,8 +8,11 @@
 class ScavTrap
 {
 public:
+	ScavTrap(void);
 	ScavTrap(std::string name);
 	~ScavTrap(void);
+
+	ScavTrap &	operator=(ScavTrap const & ScavTrap);
 
 	void	rangedAttack(std::string const & target);
 	void	meleeAttack(std::string const & target);
@@ -17,6 +20,16 @@ public:
 	void	beRepaired(unsigned int amount);
 
 	void	challengeNewcomer(std::string const & target);
+
+	unsigned int	getHitPoints(void) const;
+	unsigned int	getMaxHitPoints(void) const;
+	unsigned int	getEnergyPoints(void) const;
+	unsigned int	getMaxEnergyPoints(void) const;
+	unsigned int	getLevel(void) const;
+	std::string		getName(void) const;
+	unsigned int	getMaleeAttackDamage(void) const;
+	unsigned int	getRangedAttackDamage(void) const;
+	unsigned int	getArmorDamageReduction(void) const;
 
 private:
 	std::string			_name;
