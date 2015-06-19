@@ -2,18 +2,18 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name) : _name(name), _hitPoints(100),
-	_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100),
-	_level(1), _meleeAttackDamage(30), _rangedAttackDamage(20),
-	_armorDamageReduction(5)
+	_maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50),
+	_level(1), _meleeAttackDamage(20), _rangedAttackDamage(15),
+	_armorDamageReduction(3)
 {
 	std::cout << this->_name << "<SC4V-TP> pret !" << std::endl;
 	return ;
 }
 
 ScavTrap::ScavTrap(void) : _name("null"), _hitPoints(100),
-	_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100),
-	_level(1), _meleeAttackDamage(30), _rangedAttackDamage(20),
-	_armorDamageReduction(5)
+	_maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50),
+	_level(1), _meleeAttackDamage(20), _rangedAttackDamage(15),
+	_armorDamageReduction(3)
 {
 	std::cout << this->_name << "<SC4V-TP> pret !" << std::endl;
 	return ;

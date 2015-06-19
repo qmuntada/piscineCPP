@@ -3,6 +3,11 @@
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
+	this->_meleeAttackDamage = 20;
+	this->_rangedAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << this->_name << "<SC4V-TP> pret !" << std::endl;
 	return ;
 }

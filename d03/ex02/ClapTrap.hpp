@@ -32,13 +32,13 @@ public:
 protected:
 	std::string			_name;
 	unsigned int		_hitPoints;
-	unsigned int const	_maxHitPoints;
+	unsigned int		_maxHitPoints;
 	unsigned int		_energyPoints;
-	unsigned int const	_maxEnergyPoints;
+	unsigned int 		_maxEnergyPoints;
 	unsigned int		_level;
-	unsigned int const	_meleeAttackDamage;
-	unsigned int const	_rangedAttackDamage;
-	unsigned int const	_armorDamageReduction;
+	unsigned int		_meleeAttackDamage;
+	unsigned int		_rangedAttackDamage;
+	unsigned int		_armorDamageReduction;
 };
 
 # endif
