@@ -22,7 +22,15 @@ int		main(void)
 		std::cout << "[" << (std::string)array2[i] << "] ";
 	std::cout << std::endl << std::endl;
 
-	//std::cout << "Si on essaye d'acceder a une valeur non assigne : ";
-	//std::cout << "[" << (std::string)array2[3] << "] " << std::endl;
+	std::cout << "Si on essaye d'acceder a une valeur non assigne : ";
+
+	try
+	{
+		std::cout << "[" << (std::string)array2[3] << "] " << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "value not in range :" << e.what();
+	}
 	return (0);
 }
